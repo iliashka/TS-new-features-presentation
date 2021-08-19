@@ -72,6 +72,7 @@
 									<br>
 									<br>
 									&nbsp&nbsp&nbsp&nbspКак мы видим, функция makeThing возвращает геттер и сеттер. С помощью геттера мы читаем нужную нам информацию с типом number. А с помощью сеттера мы записываем информацию в тех типах, в которых она может прийти.
+									Однако сам сеттер внутри себя всё равно преобразует значение к тому типу, с которым его будет возвращать геттер.
 								</p>
 								<div class="fragment content-images">
 									<img src="images/code-fragments/1.png">
@@ -92,7 +93,8 @@
 								<div class="content">
 									<div class="fragment fade-right content-block" style="margin: 0.5em 0">
 										<p class="info-middle-size" style="width: 320px; margin: auto">
-											&nbsp&nbsp&nbsp&nbspКогда метод отмечен значком override, TypeScript всегда будет следить за тем, чтобы метод с таким же именем существовал в базовом классе.
+											&nbsp&nbsp&nbsp&nbspКогда метод отмечен значком override, TypeScript всегда будет следить за тем,
+											чтобы метод с таким же именем существовал в базовом классе.
 										</p>
 										<img src="images/code-fragments/3.png" alt="3" style="height: 227px; margin: 0">
 									</div>
@@ -114,10 +116,10 @@
 								<h6 style="text-align: left; width: 65px; margin-bottom: 0; font-size: 39px">2.2</h6>
 								<div class="content six">
 									<p class="info-middle-size" style="margin: 5em auto auto;width: 80%">
-										&nbsp&nbsp&nbsp&nbspВот почему в TypeScript 4.3 также добавлен новый флаг --noImplicitOverride.
+										&nbsp&nbsp&nbsp&nbspВот почему в TypeScript 4.3 также добавлен новый флаг <br>--noImplicitOverride.
 										Когда эта опция включена, переопределение любого метода из суперкласса становится ошибкой, если вы явно не используете ключевое слово override.
 										В этом последнем примере TypeScript выдает ошибку из-за флага --noImplicitOverride
-										и подсказывает нам, что нам, вероятно, нужно переименовать наш метод внутри Derived.
+										и подсказывает нам, что нам, вероятно, нужно переименовать наш метод внутри класса Derived.
 									</p>
 								</div>
 							</div>
@@ -134,12 +136,12 @@
 								</div>
 								<div class="content seven">
 									<p class="fragment fade-right info-middle-size" style="width: 100%">
-										&nbsp&nbsp&nbsp&nbspВ последних версиях TypeScript представил новую конструкцию типа: строковые типы шаблонов.
-										Это типы, которые либо создают новые строковые типы, объединяя…
+										&nbsp&nbsp&nbsp&nbspВ последних версиях, TypeScript представил новую конструкцию типа: типы шаблонов строк.
+										Это типы, которые либо создают новые строковые типы, объединяя их…
 									</p>
 									<img src="images/code-fragments/5.png" alt="5" class="fragment fade-right ">
 									<p class="fragment fade-right info-middle-size" style="width: 100%">
-										… Или сопоставить образцы других строковых типов.
+										… Или сопоставляют образцы других строковых типов.
 									</p>
 									<img src="images/code-fragments/6.png" alt="6" class="fragment fade-right ">
 								</div>
@@ -152,9 +154,9 @@
 								<h6 style="text-align: left; width: 65px; margin-bottom: 0; font-size: 39px">3.2</h6>
 								<div class="content seven">
 									<p class="fragment fade-right info-middle-size" style="width: 912px">
-										&nbsp&nbsp&nbsp&nbspПервое изменение, которое мы внесли, как раз в тот момент, когда TypeScript выведет тип строки шаблона.
-										Когда строка шаблона контекстуально вводится типом, подобным строковому литералу (т. е. когда TypeScript видит, что мы
-										передаем строку шаблона чему-то, что принимает литеральный тип), он попытается придать этому выражению тип шаблона.
+										&nbsp&nbsp&nbsp&nbspПервое изменение, которое было показано, как раз в тот момент, когда TypeScript выведет тип шаблона строки.
+										Когда шаблон строки контекстуально вводится типом, подобным строковому литералу (т. е. когда TypeScript видит, что мы
+										передаем шаблон строки чему-то), он попытается придать этому выражению тип шаблона.
 									</p>
 									<img class="fragment fade-right " src="images/code-fragments/7.png" alt="7" style="width: 912px">
 									<p class="fragment fade-right info-middle-size" style="width: 912px">
@@ -217,9 +219,9 @@
 								<p style="font-size:0.7em; text-align: left; width: 345px; margin: 0">Проверки Always-Truthy Promise</p>
 							</div>
 							<div class="content" style="margin-top: 2em">
-								<p class="fragment fade-down info-middle-size" style="width: 912px; margin: auto">
-									&nbsp&nbsp&nbsp&nbspПри строгих проверках на ноль проверка того,
-									является ли пользователь "истинным" в условии, приведет к ошибке.
+								<p class="fragment fade-down info-middle-size" style="margin: auto">
+									&nbsp&nbsp&nbsp&nbspПри включенном флаге strictNullCheck проверка того,
+									является ли Promise "истинным" в условии, приведет к ошибке.
 								</p>
 								<img class="fragment fade-right" src="images/code-fragments/12.png" alt="12">
 							</div>
@@ -271,26 +273,23 @@
 				</section>
 				<section class="section-wrapper" data-background-color="#13335a">
 					<div class="content-wrapper">
-						<div class="fifth-slide-wrapper">
+						<div class="fifth-slide-wrapper" >
 							<div class="header-wrapper">
 								<h6 style="text-align: left; width: 30px; margin-bottom: 0; font-size: 39px">7</h6>
 								<p style="font-size:0.7em; text-align: left; width: 300px; margin: 0">.tsbuildinfo Улучшение размера</p>
 							</div>
-							<p class="fragment fade-right info-middle-size" style="margin-top: 1.5em">
-								&nbsp&nbsp&nbsp&nbspВ TypeScript 4.3 .tsbuildinfo файлы, которые создаются как часть --incremental сборок,
-								должны быть значительно меньше. Это стало возможным благодаря нескольким оптимизациям внутреннего формата,
-								создающим таблицы с числовыми идентификаторами, которые будут использоваться во всем файле вместо повторения
-								полных путей и подобной информации.  Значительно уменьшен размер .tsbuildinfo файлов, в том числе
-								<br><br>
-							</p>
-							<ul>
-								<li class="fragment fade-right"><p class="info-middle-size">От 1 МБ до 411 КБ</p></li>
-								<li class="fragment fade-right"><p class="info-middle-size">От 14,9 МБ до 1 МБ</p></li>
-								<li class="fragment fade-right"><p class="info-middle-size">От 1345 МБ до 467 МБ</p></li>
-							</ul>
-							<p class="fragment fade-right info-middle-size" style="margin-top: 1.5em">
-								&nbsp&nbsp&nbsp&nbspИзлишне говорить, что такая экономия в размере также приводит к несколько более быстрому времени сборки.
-							</p>
+							<div style="width: 90%; margin: auto">
+								<p class="fragment fade-right info-middle-size" style="margin-top: 1.5em">
+									&nbsp&nbsp&nbsp&nbspВ TypeScript 4.3 .tsbuildinfo файлы, которые создаются как часть --incremental сборок,
+									должны быть значительно меньше. Это стало возможным благодаря нескольким оптимизациям внутреннего формата,
+									создающим таблицы с числовыми идентификаторами, которые будут использоваться во всем файле вместо повторения
+									полных путей и подобной информации.  Значительно уменьшен размер .tsbuildinfo файлов .
+									<br><br>
+								</p>
+								<p class="fragment fade-right info-middle-size" style="margin-top: 1.5em">
+									&nbsp&nbsp&nbsp&nbspУменьшение размера может варьироваться от 3 до 15 раз. Излишне говорить, что такая экономия в размере также приводит к несколько более быстрому времени сборки.
+								</p>
+							</div>
 						</div>
 					</div>
 				</section>
@@ -320,22 +319,24 @@
 						<div class="content-wrapper">
 							<div class="thirteenth-slide-wrapper">
 								<h6 style="text-align: left; width: 65px; margin-bottom: 0; font-size: 39px">8.2</h6>
-								<p class="fragment fade-right info-middle-size" style="width: 90%; margin: 4em auto">&nbsp&nbsp&nbsp&nbspЭто вызывает некоторую боль при написании полного оператора импорта с нуля,
-									потому что автозаполнение не могло работать правильно. Например, если вы начинаете писать что-то вроде этого
-									"import {", TypeScript не знает, из какого модуля вы планируете импортировать,
-									поэтому он не может обеспечить каких-либо завершений в ограниченном масштабе.
-									<br>
-									<br>
-									&nbsp&nbsp&nbsp&nbspЧтобы решить эту проблему, в версии 4.3 использовали возможности автоматического импорта!
-									Автоимпорт уже решает проблему невозможности сузить число завершений из определенного модуля
-									- весь их смысл состоит в том, чтобы предоставить все возможные варианты экспорта и автоматически вставить
-									оператор импорта в верхнюю часть файла.
-									<br>
-									<br>
-									&nbsp&nbsp&nbsp&nbspИтак, когда вы начнете писать import оператор, у которого нет пути,
-									TypeScript предоставит вам список возможных вариантов импорта. Когда вы выберете место экспорта,
-									TypeScript завершит полный оператор импорта, включая путь, который вы собирались записать.
-								</p>
+								<div style="width: 90%; margin: auto">
+									<p class="fragment fade-right info-middle-size" style="margin: 4em auto 1em">&nbsp&nbsp&nbsp&nbspЭто вызывает некоторую боль при написании полного оператора импорта с нуля,
+										потому что автозаполнение не могло работать правильно. Например, если вы начинаете писать что-то вроде этого
+										"import {", TypeScript не знает, из какого модуля вы планируете импортировать,
+										поэтому он не может обеспечить каких-либо завершений в ограниченном масштабе.
+									</p>
+									<p class="fragment fade-right info-middle-size" style="margin-bottom: 1em">
+										&nbsp&nbsp&nbsp&nbspЧтобы решить эту проблему, в версии 4.3 использовали возможности автоматического импорта!
+										Автоимпорт уже решает проблему невозможности сузить число завершений из определенного модуля
+										- весь их смысл состоит в том, чтобы предоставить все возможные варианты экспорта и автоматически вставить
+										оператор импорта в верхнюю часть файла.
+									</p>
+									<p class="fragment fade-right info-middle-size">
+										&nbsp&nbsp&nbsp&nbspИтак, когда вы начнете писать import оператор, у которого нет пути,
+										TypeScript предоставит вам список возможных вариантов импорта. Когда вы выберете место экспорта,
+										TypeScript завершит полный оператор импорта, включая путь, который вы собирались записать.
+									</p>
+								</div>
 							</div>
 						</div>
 					</section>
@@ -360,8 +361,8 @@
 										как go-to-definition или find-all-links.
 									</p>
 									<p class="fragment fade-right info-middle-size" style="width: 90%; margin: 1em auto 1em">
-										&nbsp&nbsp&nbsp&nbspНапример, вы сможете перейти к определению bar в @link bar примере ниже, а редактор,
-										поддерживающий TypeScript, перейдет к bar объявлению функции.
+										&nbsp&nbsp&nbsp&nbspНапример, вы сможете перейти к определению plantCarrot в {@link plantCarrot} примере ниже, а редактор,
+										поддерживающий TypeScript, перейдет к объявлению функции plantCarrot.
 									</p>
 									<img class="fragment fade-right" src="images/code-fragments/18.png" alt="18">
 								</div>
