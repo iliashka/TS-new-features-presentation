@@ -17,7 +17,7 @@ html * {
  *********************************************/
 :root {
   --r-background-color: #fdf6e3;
-  --r-main-font: Lato, sans-serif;
+  --r-main-font: Roboto, sans-serif;
   --r-main-font-size: 40px;
   --r-main-color: #657b83;
   --r-block-margin: 20px;

@@ -12,12 +12,17 @@
  * GLOBAL STYLES
  *********************************************/
 
+html body {
+	font-family: Roboto, sans-serif !important;
+}
+
 html.reveal-full-page {
 	width: 100%;
 	height: 100%;
 	height: 100vh;
 	height: calc( var(--vh, 1vh) * 100 );
 	overflow: hidden;
+	background-color: #13335a;
 }
 
 .reveal-viewport {
@@ -35,6 +40,124 @@ html.reveal-full-page {
 /*********************************************
  * VIEW FRAGMENTS
  *********************************************/
+
+.reveal .slides section .content-wrapper .logo-icon {
+	width: 236px;
+	height: auto;
+	margin-bottom: 7%;
+}
+
+.reveal .slides section .content-wrapper {
+	width: 960px;
+	height: 700px !important;
+}
+
+.reveal .slides section .content-wrapper .first-slide-wrapper {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.reveal .slides section .content-wrapper .info-middle-size {
+	font-size: 21px;
+	text-align: left;
+	margin: 0
+}
+
+.reveal .slides section .content-wrapper .second-slide-wrapper {
+	padding: 0.7em 0.5em;
+}
+
+.reveal .slides section .content-wrapper .second-slide-wrapper h3 {
+	font-size: 1.1em;
+	text-align: left;
+	margin-bottom: 0.8em ;
+}
+
+.reveal .slides section .content-wrapper .third-slide-wrapper {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.reveal .slides section .content-wrapper .third-slide-wrapper h1 {
+	width: 806px;
+	font-size: 75px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.reveal .slides section .content-wrapper .header-wrapper {
+	width: 330px !important;
+	border: 2px white solid;
+	padding: 0.3em 1em 0.3em 0.3em;
+	display: flex;
+	flex-direction: column;
+}
+
+.reveal .slides section .content-wrapper .content {
+	margin-top: 0.2rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.reveal .slides section .content-wrapper .content p {
+	width: 452px;
+}
+
+.reveal .slides section .content-wrapper .content .content-images {
+	display: flex;
+	flex-direction: column;
+}
+
+.reveal .slides section .content-wrapper .content .content-images img {
+	margin: 0;
+}
+
+.fifth-slide-wrapper .content {
+	flex-direction: column !important;
+}
+
+.reveal .slides section .content-block {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border: 2px white solid;
+}
+
+.reveal .slides section .content-wrapper .sixth-slide-wrapper .content.six {
+	flex-direction: column;
+	margin-top: 0.5em;
+}
+
+.reveal .slides section .content-wrapper .seventh-slide-wrapper .content.seven {
+	flex-direction: column;
+	margin-top: 1em;
+}
+
+.reveal .slides section .content-wrapper .eighth-slide-wrapper .content.seven {
+	flex-direction: column;
+	margin-top: 1em;
+	align-items: center;
+}
+
+.reveal .slides section .content-wrapper .ninth-slide-wrapper .content.seven {
+	flex-direction: column;
+	margin-top: 4em;
+	align-items: center;
+}
+
+.reveal .slides section .content-wrapper .tenth-slide-wrapper .content-block.ten-top {
+	display: flex;
+	flex-direction: column !important;
+	width: 50%;
+}
 
 .reveal .slides section .fragment {
 	opacity: 0;
@@ -1381,7 +1504,7 @@ $controlsArrowAngleActive: 36deg;
 .reveal.rtl .slides h5,
 .reveal.rtl .slides h6 {
 	direction: rtl;
-	font-family: sans-serif;
+	font-family: Roboto, sans-serif;
 }
 
 .reveal.rtl pre,
@@ -1715,7 +1838,7 @@ $notesWidthPercent: 25%;
 	overflow: auto;
 	box-sizing: border-box;
 	text-align: left;
-	font-family: Helvetica, sans-serif;
+	font-family: Roboto, sans-serif;
 	-webkit-overflow-scrolling: touch;
 
 	.notes-placeholder {
