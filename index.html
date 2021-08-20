@@ -6,18 +6,495 @@
 
 		<title>reveal.js</title>
 
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/black.css">
-
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section class="section-wrapper" data-background-color="#13335a">
+					<div class="content-wrapper">
+						<div class="first-slide-wrapper">
+							<img class="logo-icon" src="./images/logo/logo.svg.png" alt="logo">
+							<h1 class="logo">TypeScript</h1>
+							<h5>New Features</h5>
+						</div>
+					</div>
+				</section>
+				<section class="section-wrapper" data-background-color="#13335a">
+					<section>
+						<div class="content-wrapper">
+							<div class="second-slide-wrapper">
+								<h3>Вкратце о TypeScript:</h3>
+								<p class="fragment info-middle-size">&nbsp&nbsp&nbsp&nbspTypeScript — это язык программирования, в котором исправлены многие недостатки JavaScript. Код на TypeScript выглядит почти так же, как и код на JS, и, если у вас есть опыт разработки на JS, изучить TypeScript достаточно просто. Особенно учитывая, что вы можете писать JS-код прямо в TS-скриптах.
+									<br>
+									<br>
+									&nbsp&nbsp&nbsp&nbspКод на TypeScript компилируется в JavaScript и подходит для разработки любых проектов под любые браузеры — тем более что можно выбрать версию JS, в которую будет компилироваться код.
+									<br>
+									<br>
+									&nbsp&nbsp&nbsp&nbspВ отличии от JavaScript, TypeScript обладает строгой типизацией и благодаря этому позволяет избегать множества проблем в процессе разработки. За счет этого увеличивается и читаемость кода.
+								</p>
+							</div>
+						</div>
+					</section>
+					<section>
+						<div class="content-wrapper">
+							<img src="images/code-fragments/25.png" alt="25">
+						</div>
+					</section>
+				</section>
+				<section class="section-wrapper" data-background-color="#13335a">
+					<div class="content-wrapper">
+						<div class="third-slide-wrapper">
+							<h1>
+								<span>Нововведения в TypeScript версии 4.3</span>
+							</h1>
+						</div>
+					</div>
+				</section>
+				<section class="section-wrapper" data-background-color="#13335a">
+					<div class="content-wrapper">
+						<div class="fourth-slide-wrapper">
+							<div class="header-wrapper">
+								<h3 style="text-align: left; width: 30px; margin-bottom: 0">1</h3>
+								<p style="font-size:0.7em; text-align: left; width: 345px; margin: 0">Раздельные типы записи в свойствах:</p>
+							</div>
+							<div class="content">
+								<p class="fragment info-middle-size" style="margin-top: 3em">
+									&nbsp&nbsp&nbsp&nbspФактически, в TS добавили синтаксис к интерфейсам / типам объектов для поддержки различных типов чтения / записи свойств.
+									<br>
+									<br>
+									&nbsp&nbsp&nbsp&nbspКак мы видим, функция makeThing возвращает геттер и сеттер. С помощью геттера мы получаем нужную нам информацию с типом number. А с помощью сеттера мы записываем информацию в тех типах, в которых она может прийти.
+									Однако сам сеттер внутри себя всё равно преобразует значение к тому типу, с которым его будет возвращать геттер.
+								</p>
+								<div class="fragment content-images">
+									<img src="images/code-fragments/1.png">
+									<img src="images/code-fragments/2.png">
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section>
+					<section class="section-wrapper" data-background-color="#13335a">
+						<div class="content-wrapper">
+							<div class="fifth-slide-wrapper">
+								<div class="header-wrapper">
+									<h6 style="text-align: left; width: 65px; margin-bottom: 0; font-size: 39px">2.1</h6>
+									<p style="font-size:0.7em; text-align: left; width: 300px; margin: 0">override и флаг <br> --noImplicitOverride</p>
+								</div>
+								<div class="content">
+									<div class="fragment fade-right content-block" style="margin: 0.5em 0">
+										<p class="info-middle-size" style="width: 320px; margin: auto">
+											&nbsp&nbsp&nbsp&nbspКогда метод отмечен значком override, TypeScript всегда будет следить за тем,
+											чтобы метод с таким же именем существовал в базовом классе.
+										</p>
+										<img src="images/code-fragments/3.png" alt="3" style="height: 227px; margin: 0">
+									</div>
+									<div class="fragment fade-right content-block">
+										<img src="images/code-fragments/4.png" alt="4" style="height: 227px; margin: 0">
+										<p class="info-middle-size" style="width: 373px; margin: auto">
+											&nbsp&nbsp&nbsp&nbspЭто большое улучшение, но оно не поможет, если вы забудете написать override метод.
+											<br><br>
+											&nbsp&nbsp&nbsp&nbspНапример, вы можете случайно «затоптать» метод, существующий в базовом классе, не осознавая этого.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="section-wrapper" data-background-color="#13335a">
+						<div class="content-wrapper">
+							<div class="sixth-slide-wrapper">
+								<h6 style="text-align: left; width: 65px; margin-bottom: 0; font-size: 39px">2.2</h6>
+								<div class="content six">
+									<p class="info-middle-size" style="margin: 5em auto auto;width: 80%">
+										&nbsp&nbsp&nbsp&nbspВот почему в TypeScript 4.3 также добавлен новый флаг <br>--noImplicitOverride.
+										Когда эта опция включена, переопределение любого метода из базового класса становится ошибкой, если вы явно не используете ключевое слово override.
+										В этом последнем примере TypeScript выдает ошибку из-за флага --noImplicitOverride
+										и подсказывает нам, что нам, вероятно, нужно переименовать наш метод внутри класса Derived.
+									</p>
+									<img class="fragment fade-down" src="images/code-fragments/4.png" alt="4" style="margin: .5em auto; width: 50%">
+								</div>
+							</div>
+						</div>
+					</section>
+				</section>
+				<section class="section-wrapper" data-background-color="#13335a">
+					<section>
+						<div class="content-wrapper">
+							<div class="seventh-slide-wrapper">
+								<div class="header-wrapper">
+									<h6 style="text-align: left; width: 65px; margin-bottom: 0; font-size: 39px">3.1</h6>
+									<p style="font-size:0.7em; text-align: left; width: 345px; margin: 0">Улучшения типа Шаблона Строки</p>
+								</div>
+								<div class="content seven">
+									<p class="fragment fade-right info-middle-size" style="width: 100%">
+										&nbsp&nbsp&nbsp&nbspВ последних версиях, TypeScript представил новую конструкцию типа: типы шаблонов строк.
+										Это типы, которые либо создают новые строковые типы, объединяя их…
+									</p>
+									<img src="images/code-fragments/5.png" alt="5" class="fragment fade-right ">
+									<p class="fragment fade-right info-middle-size" style="width: 100%">
+										… Или сопоставляют образцы других строковых типов.
+									</p>
+									<img src="images/code-fragments/6.png" alt="6" class="fragment fade-right ">
+								</div>
+							</div>
+						</div>
+					</section>
+					<section>
+						<div class="content-wrapper">
+							<div class="eighth-slide-wrapper">
+								<h6 style="text-align: left; width: 65px; margin-bottom: 0; font-size: 39px">3.2</h6>
+								<div class="content seven">
+									<p class="fragment fade-right info-middle-size" style="width: 912px">
+										&nbsp&nbsp&nbsp&nbspПервое изменение, которое было показано: как раз в тот момент, когда TypeScript выведет тип шаблона строки.
+										Когда шаблон строки контекстуально вводится типом, подобным строковому литералу (т. е. когда TypeScript видит, что мы
+										передаем шаблон строки чему-то), он попытается придать этому выражению тип шаблона.
+									</p>
+									<img class="fragment fade-right " src="images/code-fragments/7.png" alt="7" style="width: 912px">
+									<p class="fragment fade-right info-middle-size" style="width: 912px">
+										Это также срабатывает при выводе типов, и параметр type расширяет строку
+									</p>
+									<img class="fragment fade-right " src="images/code-fragments/8.png" alt="8" style="width: 912px">
+								</div>
+							</div>
+						</div>
+					</section>
+					<section>
+						<div class="content-wrapper">
+							<div class="ninth-slide-wrapper">
+								<h6 style="text-align: left; width: 65px; margin-bottom: 0; font-size: 39px">3.3</h6>
+								<div class="content seven">
+									<p class="fragment fade-right info-middle-size" style="width: 912px; margin-bottom: .5em">
+										&nbsp&nbsp&nbsp&nbspВторое существенное изменение заключается в том,
+										что TypeScript теперь может лучше соотносить различные типы строк шаблона и делать выводы между ними.
+										<br><br>
+										&nbsp&nbsp&nbsp&nbspЧтобы убедиться в этом, взгляните на следующий пример кода:
+									</p>
+									<img class="fragment fade-right " src="images/code-fragments/26.png" alt="26" style="width: 912px">
+								</div>
+							</div>
+						</div>
+					</section>
+				</section>
+				<section class="section-wrapper" data-background-color="#13335a">
+					<div class="content-wrapper">
+						<div class="tenth-slide-wrapper-top" style="width: 100%; display: flex; flex-direction: row; justify-content: space-between">
+							<div class="content-block ten-top" style="display: flex; flex-direction: column; width: 50%; border: 0;">
+								<div class="header-wrapper">
+									<h6 style="text-align: left; width: 30px; margin-bottom: 0; font-size: 39px">4</h6>
+									<p style="font-size:0.7em; text-align: left; width: 345px; margin: 0">#private Элементы класса ECMAScript</p>
+								</div>
+								<p class="fragment fade-down info-middle-size" style="width: 81%; margin-bottom: 1em">
+									&nbsp&nbsp&nbsp&nbspTypeScript 4.3 расширяет список элементов класса, которые можно передать,
+									#private #names чтобы сделать их действительно приватными во время выполнения.
+									Помимо свойств, методы и средства доступа также могут иметь частные имена.
+								</p>
+							</div>
+							<img class="fragment fade-down " src="images/code-fragments/10.png" alt="10" style="height: 466px; margin: 0">
+						</div>
+						<div class="fragment fade-down">
+							<hr>
+							<div class="tenth-slide-wrapper-bottom" style="width: 100%; display: flex; flex-direction: row; justify-content: space-between">
+								<p class="info-middle-size" style="width: 40%; margin-top: 1em">
+									&nbsp&nbsp&nbsp&nbspВ более широком смысле, статические члены теперь могут иметь частные имена.
+								</p>
+								<img src="images/code-fragments/11.png" alt="11" style="margin: 0; width: 450px">
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="section-wrapper" data-background-color="#13335a">
+					<div class="content-wrapper">
+						<div class="eleventh-slide-wrapper-top" style="width: 100%">
+							<div class="header-wrapper">
+								<h6 style="text-align: left; width: 30px; margin-bottom: 0; font-size: 39px">5</h6>
+								<p style="font-size:0.7em; text-align: left; width: 345px; margin: 0">Проверки Always-Truthy Promise</p>
+							</div>
+							<div class="content" style="margin-top: 2em">
+								<p class="fragment fade-down info-middle-size" style="margin: auto">
+									&nbsp&nbsp&nbsp&nbspПри включенном флаге strictNullCheck проверка того,
+									возвращает ли Promise "true" в условии, приведет к ошибке.
+								</p>
+								<img class="fragment fade-right" src="images/code-fragments/12.png" alt="12">
+							</div>
+						</div>
+					</div>
+				</section>
+				<section>
+					<section class="section-wrapper" data-background-color="#13335a">
+						<div class="content-wrapper">
+							<div class="fifth-slide-wrapper">
+								<div class="header-wrapper">
+									<h6 style="text-align: left; width: 65px; margin-bottom: 0; font-size: 39px">6.1</h6>
+									<p style="font-size:0.7em; text-align: left; width: 300px; margin: 0">static Индексные подписи</p>
+								</div>
+								<div class="content">
+									<div class="fragment fade-right content-block" style="margin: 0.5em 0">
+										<div style=" width: 40%;">
+											<p class="info-middle-size" style=" margin: 3em 1em">
+												&nbsp&nbsp&nbsp&nbspИндексные подписи позволяют нам устанавливать для значения больше свойств, чем явно объявляет тип.
+											</p>
+										</div>
+										<img src="images/code-fragments/13.png" alt="13" style="height: 227px; margin: 0">
+									</div>
+									<div class="fragment fade-left content-block">
+										<img src="images/code-fragments/14.png" style="height: 227px; margin: 0">
+										<p class="info-middle-size" style="width: 373px; margin: auto">
+											&nbsp&nbsp&nbsp&nbspДо сих пор подпись индекса могла быть объявлена только на стороне экземпляра класса.
+											В версии 4.3 подписи индекса теперь могут быть объявлены как static.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="section-wrapper" data-background-color="#13335a">
+						<div class="content-wrapper">
+							<div class="thirteenth-slide-wrapper">
+								<h6 style="text-align: left; width: 65px; margin-bottom: 0; font-size: 39px">6.2</h6>
+								<div class="content seven" style="margin-top: 5em">
+									<p class="fragment fade-right info-middle-size" style="width: 912px; margin-bottom: .5em">
+										&nbsp&nbsp&nbsp&nbspК индексным подписям на статической стороне класса применяются те же правила,
+										что и для стороны экземпляра, а именно, что все остальные статические свойства должны быть совместимы с индексной подписью.
+									</p>
+									<img src="images/code-fragments/15.png" class="fragment fade-right" alt="15" style="margin: 0">
+								</div>
+							</div>
+						</div>
+					</section>
+				</section>
+				<section class="section-wrapper" data-background-color="#13335a">
+					<div class="content-wrapper">
+						<div class="fifth-slide-wrapper" >
+							<div class="header-wrapper">
+								<h6 style="text-align: left; width: 30px; margin-bottom: 0; font-size: 39px">7</h6>
+								<p style="font-size:0.7em; text-align: left; width: 300px; margin: 0">.tsbuildinfo Улучшение размера</p>
+							</div>
+							<div style="width: 90%; margin: auto">
+								<p class="fragment fade-right info-middle-size" style="margin-top: 1.5em">
+									&nbsp&nbsp&nbsp&nbspВ TypeScript 4.3 .tsbuildinfo файлы, которые создаются как часть --incremental сборок,
+									должны быть значительно меньше. Это стало возможным благодаря нескольким оптимизациям внутреннего формата,
+									создающим таблицы с числовыми идентификаторами, которые будут использоваться во всем файле вместо повторения
+									полных путей и подобной информации.  Значительно уменьшен размер .tsbuildinfo файлов .
+									<br><br>
+								</p>
+								<div class="fragment fade-down">
+									<p class="info-middle-size" style="margin-top: 1.5em">
+										&nbsp&nbsp&nbsp&nbspУменьшение размера может варьироваться от 3 до 15 раз. Излишне говорить, что такая экономия в размере также приводит к несколько более быстрому времени сборки.
+									</p>
+									<img src="images/code-fragments/loading-21.gif" style="margin: 0;" alt="loading">
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section>
+					<section class="section-wrapper" data-background-color="#13335a">
+						<div class="content-wrapper">
+							<div class="fifth-slide-wrapper">
+								<div class="header-wrapper">
+									<h6 style="text-align: left; width: 65px; margin-bottom: 0; font-size: 39px">8.1</h6>
+									<p style="font-size:0.7em; text-align: left; width: 300px; margin: 0">Завершенные операции импорта</p>
+								</div>
+								<div class="content seven">
+									<p class="fragment fade-right info-middle-size" style="width: 100%; margin: 3em 0 1em">
+										&nbsp&nbsp&nbsp&nbspОдна из самых больших проблем, с которыми пользователи сталкиваются при использовании
+										операторов импорта и экспорта в JavaScript - это порядок - в частности, импорт записывается как:
+									</p>
+									<img class="fragment fade-right" src="images/code-fragments/16.png" alt="16">
+									<p class="fragment fade-right info-middle-size" style="width: 100%; margin: 1em 0 1em">
+										вместо
+									</p>
+									<img class="fragment fade-right" src="images/code-fragments/17.png" alt="17">
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="section-wrapper" data-background-color="#13335a">
+						<div class="content-wrapper">
+							<div class="thirteenth-slide-wrapper">
+								<h6 style="text-align: left; width: 65px; margin-bottom: 0; font-size: 39px">8.2</h6>
+								<div style="width: 90%; margin: auto">
+									<p class="fragment fade-right info-middle-size" style="margin: 4em auto 1em">&nbsp&nbsp&nbsp&nbspЭто вызывает некоторую боль при написании полного оператора импорта с нуля,
+										потому что автозаполнение не могло работать правильно. Например, если вы начинаете писать что-то вроде этого
+										"import {", TypeScript не знает, из какого модуля вы планируете импортировать,
+										поэтому он не может обеспечить каких-либо завершений в ограниченном масштабе.
+									</p>
+									<p class="fragment fade-right info-middle-size" style="margin-bottom: 1em">
+										&nbsp&nbsp&nbsp&nbspЧтобы решить эту проблему, в версии 4.3 использовали возможности автоматического импорта!
+										Автоимпорт уже решает проблему невозможности сузить число завершений из определенного модуля
+										- весь их смысл состоит в том, чтобы предоставить все возможные варианты экспорта и автоматически вставить
+										оператор импорта в верхнюю часть файла.
+									</p>
+									<p class="fragment fade-right info-middle-size">
+										&nbsp&nbsp&nbsp&nbspИтак, когда вы начнете писать import оператор, у которого нет пути,
+										TypeScript предоставит вам список возможных вариантов импорта. Когда вы выберете место экспорта,
+										TypeScript завершит полный оператор импорта, включая путь, который вы собирались записать.
+									</p>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="section-wrapper" data-background-color="#13335a">
+						<div class="content-wrapper">
+							<img src="images/code-fragments/20.gif" alt="20">
+						</div>
+					</section>
+				</section>
+				<section>
+					<section class="section-wrapper" data-background-color="#13335a">
+						<div class="content-wrapper">
+							<div class="fifth-slide-wrapper">
+								<div class="header-wrapper">
+									<h6 style="text-align: left; width: 30px; margin-bottom: 0; font-size: 39px">9</h6>
+									<p style="font-size:0.7em; text-align: left; width: 300px; margin: 0">Редактор поддержки @link тегов</p>
+								</div>
+								<div class="content seven" style="align-items: center">
+									<p class="fragment fade-right info-middle-size" style="width: 90%; margin: 1em auto 0">
+										&nbsp&nbsp&nbsp&nbspTypeScript теперь может понимать @link теги и будет пытаться разрешить объявления, на которые они ссылаются.
+										Это означает, что вы сможете наводить курсор на имена внутри @link тегов и быстро получать информацию или использовать такие команды,
+										как go-to-definition или find-all-links.
+									</p>
+									<p class="fragment fade-right info-middle-size" style="width: 90%; margin: 1em auto 1em">
+										&nbsp&nbsp&nbsp&nbspНапример, вы сможете перейти к определению plantCarrot в {@link plantCarrot} примере ниже, а редактор,
+										поддерживающий TypeScript, перейдет к объявлению функции plantCarrot.
+									</p>
+									<img class="fragment fade-right" src="images/code-fragments/18.png" alt="18">
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="section-wrapper" data-background-color="#13335a">
+						<div class="content-wrapper">
+							<img src="images/code-fragments/19.gif" alt="19">
+						</div>
+					</section>
+				</section>
+				<section class="section-wrapper" data-background-color="#13335a">
+					<div class="content-wrapper">
+						<div class="fifth-slide-wrapper">
+							<div class="header-wrapper" style="width: 50% !important;">
+								<h6 style="text-align: left; width: 60px; margin-bottom: 0; font-size: 39px">10</h6>
+								<p style="font-size:0.7em; text-align: left; margin: 0">Переход к определению путей к файлам, отличным от JavaScript</p>
+							</div>
+							<p class="fragment fade-right info-middle-size" style="width: 90%; margin: 3em auto 1em">
+								&nbsp&nbsp&nbsp&nbspМногие загрузчики позволяют пользователям включать ресурсы в свои приложения с помощью импорта JavaScript.
+								Обычно они будут записываться как что-то вроде `import "./styles.css"` или что-то подобное.
+							</p>
+							<p class="fragment fade-right info-middle-size" style="width: 90%; margin: 0 auto 1em">
+								&nbsp&nbsp&nbsp&nbspДо сих пор функции редактора TypeScript даже не пытались прочитать этот файл,
+								поэтому переход к определению обычно терпел неудачу.
+								В лучшем случае переход к определению будет переходить к объявлению, как declare module "*.css"если бы он мог найти что-то в этом роде.
+							</p>
+							<p class="fragment fade-right info-middle-size" style="width: 90%; margin: 0 auto 1em">
+								&nbsp&nbsp&nbsp&nbspЯзыковая служба TypeScript теперь пытается перейти к правильному файлу,
+								когда вы выполняете переход к определению для относительных путей к файлам, даже если это не файлы JavaScript или TypeScript!
+							</p>
+						</div>
+					</div>
+				</section>
+				<section class="section-wrapper" data-background-color="#13335a">
+					<div class="content-wrapper">
+						<div class="third-slide-wrapper">
+							<h1>
+								<span>Кардинальные Изменения</span>
+							</h1>
+						</div>
+					</div>
+				</section>
+				<section class="section-wrapper" data-background-color="#13335a">
+					<div class="content-wrapper">
+						<div class="fifth-slide-wrapper">
+							<div class="header-wrapper">
+								<h6 style="text-align: left; width: 30px; margin-bottom: 0; font-size: 39px">1</h6>
+								<p style="font-size:0.7em; text-align: left; margin: 0">Изменения lib.d.ts</p>
+							</div>
+							<p class="fragment fade-right info-middle-size" style="width: 90%; margin: 5em auto 1em">
+								&nbsp&nbsp&nbsp&nbspОбъявления для lib.d.ts
+								(особенно объявления, созданные для веб-контекстов), изменились.
+								В этой версии TS использовали данные Mozilla о совместимости с браузером для удаления API,
+								которые не реализует ни один браузер.
+							</p>
+							<p class="fragment fade-right info-middle-size" style="width: 90%; margin: auto">
+								&nbsp&nbsp&nbsp&nbspХотя маловероятно, что вы их используете, API-интерфейсы, такие как Account, AssertionOptions,
+								RTCStatsEventInit, MSGestureEvent, DeviceLightEvent, MSPointerEvent,
+								ServiceWorkerMessageEvent и WebAuthentication, были удалены из lib.d.ts.
+							</p>
+						</div>
+					</div>
+				</section>
+<!--				<section class="section-wrapper" data-background-color="#13335a">-->
+<!--					<div class="content-wrapper">-->
+<!--						<div class="fifth-slide-wrapper">-->
+<!--							<div class="header-wrapper">-->
+<!--								<h6 style="text-align: left; width: 30px; margin-bottom: 0; font-size: 39px">2</h6>-->
+<!--								<p style="font-size:0.7em; text-align: left; width: 320px; margin: 0">Ошибки при проверке Always-Truthy Promise</p>-->
+<!--							</div>-->
+<!--							<div class="content seven" style="align-items: center; margin-top: 2em">-->
+<!--								<p class="info-middle-size" style="width: 90%; margin: 1em auto 1em">-->
+<!--									&nbsp&nbsp&nbsp&nbspНиже используется флаг strictNullChecks, а Promise который всегда определяется-->
+<!--									в рамках проверки условия, теперь считается ошибкой.-->
+<!--								</p>-->
+<!--								<img src="images/code-fragments/21.png" alt="21">-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</section>-->
+				<section>
+					<section class="section-wrapper" data-background-color="#13335a">
+						<div class="content-wrapper">
+							<div class="fifth-slide-wrapper">
+								<div class="header-wrapper" style="width: 45% !important;">
+									<h6 style="text-align: left; width: 65px; margin-bottom: 0; font-size: 39px">2.1</h6>
+									<p style="font-size:0.7em; text-align: left; width: 450px; margin: 0">Union Enums нельзя сравнивать с произвольными числами</p>
+								</div>
+								<div class="content seven" style="align-items: center; margin-top: 1em">
+									<p class="fragment fade-right info-middle-size" style="width: 90%; margin: .5em auto 1em">
+										&nbsp&nbsp&nbsp&nbspНекоторые enum считаются union enums, когда их члены либо автоматически заполняются, либо тривиально записываются.
+										В этих случаях enum может вспомнить каждое значение, которое оно потенциально представляет.
+									</p>
+									<p class="fragment fade-right info-middle-size" style="width: 90%; margin-bottom: 1em;">
+										&nbsp&nbsp&nbsp&nbspВ TypeScript 4.3, если значение с типом перечисления union сравнивается с числовым литералом,
+										которому оно никогда не могло быть равно, то средство проверки типа выдаст ошибку.
+									</p>
+									<img class="fragment fade-right" src="images/code-fragments/22.png" alt="22">
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="section-wrapper" data-background-color="#13335a">
+						<div class="content-wrapper">
+							<div class="fifth-slide-wrapper">
+								<h6 style="text-align: left; width: 65px; margin-bottom: 0; font-size: 39px">2.2</h6>
+								<div class="content seven" style="align-items: center; margin-top: .5em">
+									<p class="fragment fade-down info-middle-size" style="width: 90%; margin: .5em auto 0">
+										&nbsp&nbsp&nbsp&nbspВ качестве обходного пути вы можете переписать аннотацию, включив в нее соответствующий тип литерала.
+									</p>
+									<img class="fragment fade-down" src="images/code-fragments/23.png" alt="23" style="margin-bottom: 0">
+								</div>
+								<hr class="fragment fade-down">
+								<div class="fragment fade-down content seven" style="align-items: center">
+									<p class="info-middle-size" style="width: 90%; margin: 0 auto 0">
+										&nbsp&nbsp&nbsp&nbspВ качестве альтернативы вы можете повторно объявить свое перечисление,
+										чтобы иметь нетривиальный инициализатор, чтобы любое число было как присваиваемым,
+										так и сопоставимым с этим перечислением. Это может быть полезно, если целью перечисления является
+										указание нескольких хорошо известных значений.
+									</p>
+									<img src="images/code-fragments/24.png" alt="24">
+								</div>
+							</div>
+						</div>
+					</section>
+				</section>
 			</div>
 		</div>
 
@@ -31,6 +508,7 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				transition: 'convex',
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
